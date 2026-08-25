@@ -9,19 +9,20 @@ using System.Collections;
 public class FPController : MonoBehaviour
 {
     [Header("Movement Settings")]
-    public float moveSpeed = 5f;
-    public float gravity = -9.81f; // Controls the downward force applied to the player.The value is negative because gravity pulls the player down.
-    public float jumpHeight = 1.5f;
+    public float moveSpeed = 10f;
+    public float gravity = -9.81f; 
+    public float jumpHeight = 3f;
 
     [Header("Look Settings")]
     public Transform cameraTransform;
-    public float lookSensitivity = 2f;
+    public Camera cam;
+    public float lookSensitivity = 0.1f;
     public float verticalLookLimit = 90f;
 
     [Header("Crouch Settings")]
-    public float crouchHeight = 1f;
-    public float standHeight = 4f;
-    public float crouchSpeed = 2.5f;
+    public float crouchHeight = 0.5f;
+    public float standHeight = 1f;
+    public float crouchSpeed = 4f;
     private float originalMoveSpeed;
 
     [Header("Pickup Settings")]
@@ -35,9 +36,9 @@ public class FPController : MonoBehaviour
     private CharacterController controller;
     private Vector2 moveInput;
     private Vector2 lookInput;
-    private Vector3 velocity; // Stores the player's current vertical movement, including gravity.
+    private Vector3 velocity; 
     private float verticalRotation = 0f;
-    // Awake runs once when the GameObject is first loaded.
+  
     private void Awake()
     {
         controller = GetComponent<CharacterController>();
@@ -47,6 +48,7 @@ public class FPController : MonoBehaviour
     }
     private void Update()
     {
+        //Debug.Log("Controller Heigh: " + controller.height);
         HandleMovement();
         HandleLook();
         if (heldObject != null)
@@ -56,44 +58,44 @@ public class FPController : MonoBehaviour
     }
     public void OnMove(InputAction.CallbackContext context)
     {
-      
+
         moveInput = context.ReadValue<Vector2>();
     }
- 
+
     public void OnLook(InputAction.CallbackContext context)
     {
-     
+
         lookInput = context.ReadValue<Vector2>();
     }
-  
+
     public void HandleMovement()
     {
-       
+
         Vector3 move = transform.right * moveInput.x + transform.forward * moveInput.y;
-       controller.Move(move * moveSpeed * Time.deltaTime);
-   
+        controller.Move(move * moveSpeed * Time.deltaTime);
+
         if (controller.isGrounded && velocity.y < 0)
         {
             velocity.y = -2f;
         }
-        
+
         velocity.y += gravity * Time.deltaTime;
-      
+
         controller.Move(velocity * Time.deltaTime);
     }
     public void HandleLook()
     {
         float mouseX = lookInput.x * lookSensitivity;
-        
+
         float mouseY = lookInput.y * lookSensitivity;
-      
+
         verticalRotation -= mouseY;
-       
-        verticalRotation = Mathf.Clamp(verticalRotation,-verticalLookLimit, verticalLookLimit);
-       
+
+        verticalRotation = Mathf.Clamp(verticalRotation, -verticalLookLimit, verticalLookLimit);
+
 
         cameraTransform.localRotation = Quaternion.Euler(verticalRotation, 0f, 0f);
-      
+
         transform.Rotate(Vector3.up * mouseX);
     }
     public void OnJump(InputAction.CallbackContext context)
@@ -105,17 +107,32 @@ public class FPController : MonoBehaviour
 
     }
     public void OnCrouch(InputAction.CallbackContext context)
-    {
+        {
         if (context.performed)
         {
+            //float temp = crouchHeight - controller.height;
             controller.height = crouchHeight;
             moveSpeed = crouchSpeed;
+            //controller.center += new Vector3(0f, temp / 2f, 0f);
         }
         else if (context.canceled)
         {
+            //float temp = standHeight - controller.height;
             controller.height = standHeight;
             moveSpeed = originalMoveSpeed;
+            //controller.center += new Vector3(0f, temp / 2f, 0f);
         }
+    }
+   
+
+    private void SetHeight(float newHeight) //code fixing the issue of the player falling through the ground
+    {
+        //capsule was falling through the floor due to the standing up height that would make it come back up underneath the plane.
+        //The center of the capsule would cause the player to fall through the plane, this code was suppoused to fix that however it failed to do so
+
+        float heightDifference = newHeight - controller.height;
+        controller.height = newHeight;
+        controller.center += new Vector3(0f, heightDifference / 2f, 0f); 
     }
     public void OnPickUp(InputAction.CallbackContext context)
     {
@@ -153,36 +170,4 @@ public class FPController : MonoBehaviour
     }
 }
 
-public class PickUpObject : MonoBehaviour
-{
-    private Rigidbody rb;
-    void Awake()
-    {
-        rb = GetComponent<Rigidbody>();
-    }
-    public void PickUp(Transform holdPoint)
-    {
-        rb.useGravity = false;
-        rb.linearVelocity = Vector3.zero;
-        rb.angularVelocity = Vector3.zero;
-        transform.SetParent(holdPoint);
-        transform.localPosition = Vector3.zero;
-    }
-    public void Drop()
-    {
-        rb.useGravity = true;
-        transform.SetParent(null);
-    }
-    public void MoveToHoldPoint(Vector3 targetPosition)
-    {
-        rb.MovePosition(targetPosition);
-    }
-    public void Throw(Vector3 impulse)
-    {
-        transform.SetParent(null);
-        rb.useGravity = true;
-        rb.linearVelocity = Vector3.zero;
-        rb.angularVelocity = Vector3.zero;
-        rb.AddForce(impulse, ForceMode.Impulse);
-    }
-}
+
