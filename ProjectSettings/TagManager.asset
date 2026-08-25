@@ -3,7 +3,9 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 3
-  tags: []
+  tags:
+  - Can Pick Up
+  - Hold layer
   layers:
   - Default
   - TransparentFX
