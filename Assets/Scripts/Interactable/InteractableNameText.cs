@@ -6,7 +6,7 @@ using System.Collections.Generic;
 using System.Collections;
 using System;
 using TMPro;
-using static UnityEditor.Progress;
+
 public class InteractableNameText : MonoBehaviour
 {
     TextMeshProUGUI text;
@@ -25,14 +25,14 @@ public class InteractableNameText : MonoBehaviour
         {
             text.text = "Press E to pick up " + interactable.InteractableName;
         }
-        else if (interactable is Door)
-        {
-            text.text = "Press E to open " + interactable.InteractableName;
-        }
-        else if (interactable is InvestigateItem)
-        {
-            text.text = "Press E to Investigate " + interactable.InteractableName;
-        }
+        //else if (interactable is Door)
+       // {
+        //    text.text = "Press E to open " + interactable.InteractableName;
+       // }
+       //else if (interactable is InvestigateItem)
+       // {
+       //     text.text = "Press E to Investigate " + interactable.InteractableName;
+       // }
         else if (interactable is NPC)
         {
             text.text = "Press E to talk to " + interactable.InteractableName;
