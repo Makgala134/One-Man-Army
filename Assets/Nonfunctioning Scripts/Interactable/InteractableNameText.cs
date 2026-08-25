@@ -6,7 +6,7 @@ using System.Collections.Generic;
 using System.Collections;
 using System;
 using TMPro;
-using static UnityEditor.Progress;
+
 //public class InteractableNameText : MonoBehaviour
 //{
 //    TextMeshProUGUI text;
