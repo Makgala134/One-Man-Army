@@ -14,28 +14,50 @@ public class PickUpObject : MonoBehaviour
     }
     public void PickUp(Transform holdPoint)
     {
-        rb.useGravity = false;
-        rb.linearVelocity = Vector3.zero;
-        rb.angularVelocity = Vector3.zero;
+        if (rb != null)
+        {
+            rb.useGravity = false;
+            rb.linearVelocity = Vector3.zero;
+            rb.angularVelocity = Vector3.zero;
+        }
+
+        SetCollidersEnabled(false);
         transform.SetParent(holdPoint);
         transform.localPosition = Vector3.zero;
     }
     public void Drop()
     {
-        rb.useGravity = true;
         transform.SetParent(null);
+        if (rb != null)
+            rb.useGravity = true;
+
+        SetCollidersEnabled(true);
     }
     public void MoveToHoldPoint(Vector3 targetPosition)
     {
-        rb.MovePosition(targetPosition);
+        if (rb != null)
+            rb.MovePosition(targetPosition);
+        else
+            transform.position = targetPosition;
     }
     public void Throw(Vector3 impulse)
     {
         transform.SetParent(null);
+        SetCollidersEnabled(true);
+
+        if (rb == null)
+            return;
+
         rb.useGravity = true;
         rb.linearVelocity = Vector3.zero;
         rb.angularVelocity = Vector3.zero;
         rb.AddForce(impulse, ForceMode.Impulse);
+    }
+
+    private void SetCollidersEnabled(bool isEnabled)
+    {
+        foreach (Collider itemCollider in GetComponents<Collider>())
+            itemCollider.enabled = isEnabled;
     }
 }
 

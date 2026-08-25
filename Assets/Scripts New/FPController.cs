@@ -10,7 +10,7 @@ public class FPController : MonoBehaviour
 {
     [Header("Movement Settings")]
     public float moveSpeed = 10f;
-    public float gravity = -9.81f; 
+    public float gravity = -9.81f;
     public float jumpHeight = 3f;
 
     [Header("Look Settings")]
@@ -36,18 +36,30 @@ public class FPController : MonoBehaviour
     private CharacterController controller;
     private Vector2 moveInput;
     private Vector2 lookInput;
-    private Vector3 velocity; 
+    private Vector3 velocity;
     private float verticalRotation = 0f;
-  
+
     private void Awake()
     {
         controller = GetComponent<CharacterController>();
+        if (controller == null)
+        {
+            Debug.LogError("FPController requires a CharacterController component.", this);
+            enabled = false;
+            return;
+        }
+
+        if (cameraTransform == null && Camera.main != null)
+            cameraTransform = Camera.main.transform;
+
         originalMoveSpeed = moveSpeed;
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
     }
     private void Update()
     {
+        if (cameraTransform == null) return;
+
         //Debug.Log("Controller Heigh: " + controller.height);
         HandleMovement();
         HandleLook();
@@ -60,6 +72,11 @@ public class FPController : MonoBehaviour
     {
 
         moveInput = context.ReadValue<Vector2>();
+    }
+
+    public void OnMovement(InputAction.CallbackContext context)
+    {
+        OnMove(context);
     }
 
     public void OnLook(InputAction.CallbackContext context)
@@ -107,7 +124,7 @@ public class FPController : MonoBehaviour
 
     }
     public void OnCrouch(InputAction.CallbackContext context)
-        {
+    {
         if (context.performed)
         {
             //float temp = crouchHeight - controller.height;
@@ -123,7 +140,7 @@ public class FPController : MonoBehaviour
             //controller.center += new Vector3(0f, temp / 2f, 0f);
         }
     }
-   
+
 
     private void SetHeight(float newHeight) //code fixing the issue of the player falling through the ground
     {
@@ -132,7 +149,7 @@ public class FPController : MonoBehaviour
 
         float heightDifference = newHeight - controller.height;
         controller.height = newHeight;
-        controller.center += new Vector3(0f, heightDifference / 2f, 0f); 
+        controller.center += new Vector3(0f, heightDifference / 2f, 0f);
     }
     public void OnPickUp(InputAction.CallbackContext context)
     {
@@ -169,5 +186,4 @@ public class FPController : MonoBehaviour
         heldObject = null;
     }
 }
-
 
