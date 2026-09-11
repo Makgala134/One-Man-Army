@@ -20,10 +20,10 @@ public class FPController : MonoBehaviour
     public float lookSensitivity = 0.1f;
     public float verticalLookLimit = 90f;
 
-    [Header("Crouch Settings")]
-    public float crouchHeight = 0.5f;
-    public float standHeight = 1f;
-    public float crouchSpeed = 4f;
+    //[Header("Crouch Settings")] //crouch was removed due to technical issues
+   // public float crouchHeight = 0.5f;
+    //public float standHeight = 1f;
+   //public float crouchSpeed = 4f;
     private float originalMoveSpeed;
 
     [Header("Pickup Settings")]
@@ -96,7 +96,7 @@ public class FPController : MonoBehaviour
         moveInput = context.ReadValue<Vector2>();
     }
 
-    public void OnMovement(InputAction.CallbackContext context)
+    public void OnMovement(InputAction.CallbackContext context) //the onMove function was not functionining adequatley so we changed it from onmove to onmovement so that it matches the name on the input system
     {
         OnMove(context);
     }
@@ -145,20 +145,20 @@ public class FPController : MonoBehaviour
         }
 
     }
-    public void OnCrouch(InputAction.CallbackContext context)
+    public void OnCrouch(InputAction.CallbackContext context) //The removal of crouch.
     {
         if (context.performed)
         {
             //float temp = crouchHeight - controller.height;
-            controller.height = crouchHeight;
-            moveSpeed = crouchSpeed;
+           // controller.height = crouchHeight;
+          //  moveSpeed = crouchSpeed;
             //controller.center += new Vector3(0f, temp / 2f, 0f);
         }
         else if (context.canceled)
         {
             //float temp = standHeight - controller.height;
-            controller.height = standHeight;
-            moveSpeed = originalMoveSpeed;
+            //controller.height = standHeight;
+            //moveSpeed = originalMoveSpeed;
             //controller.center += new Vector3(0f, temp / 2f, 0f);
         }
     }
