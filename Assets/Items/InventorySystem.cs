@@ -128,7 +128,13 @@ public class InventorySystem : MonoBehaviour
 public interface Interactable
 {
     string InteractionPrompt { get; }
+    string InteractableName { get; set; }
+    object transform { get; set; }
+    string name { get; set; }
+
     void Interact(GameObject interactor);
+    bool TryGetComponent(out BoxCollider boxCollider);
+    bool TryGetComponent(out CapsuleCollider capsuleCollider);
 }
 
 
