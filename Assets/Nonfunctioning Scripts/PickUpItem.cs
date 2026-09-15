@@ -3,7 +3,7 @@ using UnityEngine;
 using UnityEngine.UIElements;
 
 [RequireComponent(typeof(Collider))]
-public class PickupItem : MonoBehaviour, Interactable
+public class PickupItem : MonoBehaviour, IInteractable
 {
     [Header("Item Data")]
     public ItemData item;

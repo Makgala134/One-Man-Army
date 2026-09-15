@@ -12,7 +12,7 @@ public class IInteractable : MonoBehaviour
     public string InteractableName = "";
     public float interactionDistanace = 6f;
 
- //   InteractableNameText interactableNameText;
+    InteractableNameText interactableNameText;
     GameObject interactableNameCanvas;
 
     [SerializeField]
@@ -31,18 +31,18 @@ public class IInteractable : MonoBehaviour
 
     public virtual void Start()
     {
-    //    interactableNameCanvas = GameObject.FindGameObjectWithTag("Canvas");
-   //     interactableNameText = interactableNameCanvas.GetComponent<InteractableNameText>();
+        interactableNameCanvas = GameObject.FindGameObjectWithTag("Canvas");
+        interactableNameText = interactableNameCanvas.GetComponent<InteractableNameText>();
     }
     public void TargetOn() //This is the code that will show the text of the object the player can interact with
     {
-    //    interactableNameText.ShowText(this);
-    //    interactableNameText.SetInteractableNamePosition(this);
+        interactableNameText.ShowText(this);
+        interactableNameText.SetInteractableNamePosition(this);
     }
 
     public void TargetOff() //Code that hides the text of the object when player isnt close enough to the object.
     {
-    //    interactableNameText.HideText();
+        interactableNameText.HideText();
     }
 }
 

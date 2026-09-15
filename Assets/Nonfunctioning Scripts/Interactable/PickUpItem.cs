@@ -5,9 +5,9 @@ using static UnityEngine.Rendering.DebugUI;
 using System.Collections.Generic;
 using System.Collections;
 using System;
-//public class PickUpItem : Interactable
-//{
-    //[Header("Item Properties")]
+public class PickUpItem : IInteractable
+{
+    [Header("Item Properties")]
     //[SerializeField]
     //string itemName;
 
