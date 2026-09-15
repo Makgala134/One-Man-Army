@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 
-// Attach this to your Player GameObject.
+
 [System.Serializable]
 [CreateAssetMenu(fileName = "New Item", menuName = "Inventory/Item")]
 public class ItemData : ScriptableObject
@@ -11,7 +11,7 @@ public class ItemData : ScriptableObject
     public string itemName = "New Item";
     [TextArea] public string description;
     public Sprite icon;
-    public GameObject worldPrefab;   // prefab used if you drop the item back into the world
+    public GameObject worldPrefab;   // This will be used to show the item back in the world when dropped
     public bool isStackable = true;
     public int maxStackSize = 99;
 }
@@ -29,25 +29,23 @@ public class InventorySlot
 }
 
 public class InventorySystem : MonoBehaviour
+//the code that runs the inventory system for the player.
+//It allows the player to add and remove items from their inventory, as well as check if they have a certain item or if the inventory is full.
 {
     [Header("Settings")]
-    public int inventorySize = 20;
+    public int inventorySize = 4;
 
     [Header("Runtime (view only)")]
     public List<InventorySlot> slots = new List<InventorySlot>();
 
-    // Subscribe to this from UI to refresh display whenever inventory changes
-    public event Action OnInventoryChanged;
+       public event Action OnInventoryChanged;
 
-    /// <summary>
-    /// Attempts to add an item. Returns true if it was fully added.
-    /// Stacks onto existing slots first, then fills empty slots.
-    /// </summary>
+   
     public bool AddItem(ItemData item, int quantity = 1)
     {
         if (item == null || quantity <= 0) return false;
+        //allows for players keep the items stacking instead of taking up too many slots in the inventory.
 
-        // Try to stack onto existing slots
         if (item.isStackable)
         {
             foreach (var slot in slots)
@@ -68,13 +66,13 @@ public class InventorySystem : MonoBehaviour
             }
         }
 
-        // Fill new slots for whatever quantity remains
+   
         while (quantity > 0)
         {
             if (slots.Count >= inventorySize)
             {
                 OnInventoryChanged?.Invoke();
-                return false; // inventory full, partial add may have happened
+                return false; //this code stops new items from being added once the invenotry is full
             }
 
             int amountToAdd = item.isStackable ? Mathf.Min(quantity, item.maxStackSize) : 1;
@@ -86,9 +84,7 @@ public class InventorySystem : MonoBehaviour
         return true;
     }
 
-    /// <summary>
-    /// Removes up to 'quantity' of the given item. Returns true if the full amount was removed.
-    /// </summary>
+    
     public bool RemoveItem(ItemData item, int quantity = 1)
     {
         if (item == null || quantity <= 0) return false;
