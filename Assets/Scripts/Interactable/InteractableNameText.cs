@@ -7,6 +7,9 @@ using System.Collections;
 using System;
 using TMPro;
 
+// Add "using UnityEngine;" at top of the file
+
+
 public class InteractableNameText : MonoBehaviour
 {
     TextMeshProUGUI text;
@@ -25,14 +28,14 @@ public class InteractableNameText : MonoBehaviour
         {
             text.text = "Press E to pick up " + interactable.InteractableName;
         }
-        //else if (interactable is Door)
-       // {
-        //    text.text = "Press E to open " + interactable.InteractableName;
-       // }
-       //else if (interactable is InvestigateItem)
-       // {
-       //     text.text = "Press E to Investigate " + interactable.InteractableName;
-       // }
+        else if (interactable is Door)
+        {
+            text.text = "Press E to open " + interactable.InteractableName;
+       }
+        else if (interactable is InvestigateItem)
+        {
+            text.text = "Press E to Investigate " + interactable.InteractableName;
+        }
         else if (interactable is NPC)
         {
             text.text = "Press E to talk to " + interactable.InteractableName;
@@ -48,12 +51,12 @@ public class InteractableNameText : MonoBehaviour
     {
         if (interactable.TryGetComponent(out BoxCollider boxCollider))
         {
-            transform.position = interactable.transform.position + Vector3.up * boxCollider.bounds.size.y;
+            //transform.position = interactable.transform.position + Vector3.up * boxCollider.bounds.size.y;
             transform.LookAt(2 * transform.position - cameraTransform.position);
         }
         else if (interactable.TryGetComponent(out CapsuleCollider capsuleCollider))
         {
-            transform.position = interactable.transform.position + Vector3.up * capsuleCollider.height;
+            //transform.position = interactable.transform.position + Vector3.up * capsuleCollider.height;
             transform.LookAt(2 * transform.position - cameraTransform.position);
         }
         else
@@ -61,7 +64,7 @@ public class InteractableNameText : MonoBehaviour
             print("Error, no collider found on interactable object: " + interactable.name);
         }
 
-        //Vector3 screenPosition = Camera.main.WorldToScreenPoint(interactable.transform.position);
+       // Vector3 screenPosition = Camera.main.WorldToScreenPoint(interactable.transform.position);
         //text.transform.position = screenPosition;
     }
     // Update is called once per frame
