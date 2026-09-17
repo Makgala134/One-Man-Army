@@ -18,8 +18,8 @@ public class Slot : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
         iconImage = transform.GetChild(0).GetComponent<Image>(); //this is the image that will show the item in the slot
         amountText = transform.GetChild(1).GetComponent<TextMeshProUGUI>(); //this is the text that will show the amount of items in the slot
   
-        iconImage = transform.Find("IconImage")?.GetComponent<Image>();
-        amountText = transform.Find("AmountText")?.GetComponent<TextMeshProUGUI>();
+        //iconImage = transform.Find("IconImage")?.GetComponent<Image>();
+        //amountText = transform.Find("AmountText")?.GetComponent<TextMeshProUGUI>();
 
         if (iconImage == null)
             Debug.LogError($"[{name}] Slot could not find IconImage child.");
@@ -49,6 +49,7 @@ public class Slot : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     {
         if (heldItem != null)
         {
+            Debug.Log("Slot Updated: " + iconImage);
             iconImage.enabled = true; //if there is an item in the slot, we will enable the image
             iconImage.sprite = heldItem.item; //we will set the image to the item sprite
             amountText.text = itemAmount.ToString(); //updating slot values
