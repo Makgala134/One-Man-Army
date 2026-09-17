@@ -20,10 +20,10 @@ public class FPController : MonoBehaviour
     public float lookSensitivity = 0.1f;
     public float verticalLookLimit = 90f;
 
-    //[Header("Crouch Settings")] //crouch was removed due to technical issues
-   // public float crouchHeight = 0.5f;
-    //public float standHeight = 1f;
-   //public float crouchSpeed = 4f;
+    [Header("Crouch Settings")] //crouch was removed due to technical issues
+    public float crouchHeight = 0.5f;
+    public float standHeight = 1f;
+   public float crouchSpeed = 4f;
     private float originalMoveSpeed;
 
     [Header("Pickup Settings")]
@@ -150,8 +150,8 @@ public class FPController : MonoBehaviour
         if (context.performed)
         {
             //float temp = crouchHeight - controller.height;
-           // controller.height = crouchHeight;
-          //  moveSpeed = crouchSpeed;
+            //controller.height = crouchHeight;
+            //moveSpeed = crouchSpeed;
             //controller.center += new Vector3(0f, temp / 2f, 0f);
         }
         else if (context.canceled)
