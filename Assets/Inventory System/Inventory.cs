@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Collections.Generic;
 using UnityEngine.InputSystem;
+using UnityEngine.UI; 
 
 public class Inventory : MonoBehaviour
 {
@@ -10,9 +11,15 @@ public class Inventory : MonoBehaviour
     public GameObject hotbarObject;
     public GameObject inventorySlotParent;
 
+    public Image dragIcon;
+
     private List<Slot> inventorySlots = new List<Slot>();
     private List<Slot> hotbarSlots = new List<Slot>();
     private List<Slot> allSlots = new List<Slot>();
+
+    private Slot draggedSlot = null;
+    private bool isDragging = false;
+
 
     private void Awake()
     {
@@ -82,5 +89,34 @@ public class Inventory : MonoBehaviour
             Debug.Log("Your Inventory is full, could not add " + remaining + " " + itemToAdd.itemName);
         }
 
+    }
+
+    private void StartDrag()
+    {
+        if(Input.GetMouseButtonDown(0))
+        {
+            Slot hovered = GetHoveredSlot();
+
+            if(hovered != null && hovered.HasItem())
+            {
+                draggedSlot = hovered;
+                isDragging = true;
+
+                //show drag item
+                //dragIcon.sprite = hovered.GetItem().icon;
+                //dragIcon.colour = new Colour(1, 1, 1,1);
+                dragIcon.enabled = true;
+                dragIcon.sprite = draggedSlot.GetItem().item;
+            }
+        }
+    }
+    private Slot GetHoveredSlot()
+    {
+        foreach(Slot s in allSlots)
+        {
+            if (s.hovering)
+                return s;
+        }
+        return null;
     }
 }
