@@ -1,24 +1,28 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.InputSystem;
 
 public class PauseMenu : MonoBehaviour
 {
-    [SerializeField] GameObject pauseMenu;
+    [SerializeField] public GameObject pauseMenu;
 
-
-    public void Pause()
+    void Update()
     {
-        pauseMenu.SetActive(true);
-    }
+        if (Keyboard.current.escapeKey.wasPressedThisFrame) ;
+
+        }
+   
 
     public void Home()
     {
         SceneManager.LoadScene("Main Menu");
+        Time.timeScale = 1;
     }
 
     public void Resume()
     {
         pauseMenu.SetActive(false);
+        Time.timeScale = 1;
     }
 
     public void Restart()
