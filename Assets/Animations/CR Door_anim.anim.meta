@@ -1,8 +1,15 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Animations/CR Door_anim.anim.meta
 guid: 2ead610e7ce806a46b3fff101acb81b4
 NativeFormatImporter:
   externalObjects: {}
   mainObjectFileID: 7400000
+========
+guid: 3461eedf582c9944291730f6d8363f55
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 11400000
+>>>>>>>> Main-Copy-(2):Assets/ProBuilder Data/Default Material Palette.asset.meta
   userData: 
   assetBundleName: 
   assetBundleVariant: 
