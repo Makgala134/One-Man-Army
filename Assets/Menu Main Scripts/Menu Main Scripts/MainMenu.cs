@@ -7,7 +7,7 @@ public class MainMenu : MonoBehaviour
 {
     public void PlayGmae()
     {
-        SceneManager.LoadSceneAsync(1);
+        SceneManager.LoadScene(1);
     }
 
 
@@ -15,6 +15,7 @@ public class MainMenu : MonoBehaviour
 
     {
         Application.Quit();
+        Debug.Log("The Game is Quitting");
     }
    
 }
