@@ -7,12 +7,14 @@ public class PlayerInteraction : MonoBehaviour
     [Header("Settings")]
     public float interactRange = 3f;
     public LayerMask interactableLayer;
+    public Transform holdPoint;
 
     [Header("UI Reference")]
     public TextMeshProUGUI textMeshPro;
 
     private Camera mainCamera;
     private IInteractable currentInteractable;
+    private HoldableItem currentlyHeldItem;
 
     private void Start()
     {
@@ -24,12 +26,36 @@ public class PlayerInteraction : MonoBehaviour
 
     private void Update()
     {
+        // If holding an item, handle dropping it
+        if (currentlyHeldItem != null)
+        {
+            if (textMeshPro != null)
+            {
+                textMeshPro.text = currentlyHeldItem.GetInteractPrompt();
+                textMeshPro.gameObject.SetActive(true);
+            }
+
+            if (Keyboard.current != null && Keyboard.current.eKey.wasPressedThisFrame)
+            {
+                DropHeldItem();
+            }
+            return;
+        }
+
+        // Otherwise, scan for interactable objects in front of the camera
         CheckForInteractable();
 
-        // Check for key press using New Input System
         if (currentInteractable != null && Keyboard.current != null && Keyboard.current.eKey.wasPressedThisFrame)
         {
-            currentInteractable.Interact();
+            // If the object is a holdable item, pick it up
+            if (currentInteractable is HoldableItem holdable)
+            {
+                PickUpItem(holdable);
+            }
+            else
+            {
+                currentInteractable.Interact();
+            }
         }
     }
 
@@ -57,6 +83,23 @@ public class PlayerInteraction : MonoBehaviour
 
         // Clear interaction if not looking at anything interactable
         ClearInteraction();
+    }
+
+    private void PickUpItem(HoldableItem item)
+    {
+        currentlyHeldItem = item;
+        currentlyHeldItem.PickUp(holdPoint);
+        currentInteractable = null;
+    }
+
+    private void DropHeldItem()
+    {
+        if (currentlyHeldItem != null)
+        {
+            currentlyHeldItem.Drop();
+            currentlyHeldItem = null;
+            ClearInteraction();
+        }
     }
 
     private void ClearInteraction()
