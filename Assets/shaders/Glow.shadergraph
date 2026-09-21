@@ -225,9 +225,9 @@
         "m_Expanded": true,
         "m_Position": {
             "serializedVersion": "2",
-            "x": 617.8792114257813,
-            "y": 181.69126892089845,
-            "width": 209.39599609375,
+            "x": 636.5637817382813,
+            "y": 146.25503540039063,
+            "width": 208.751708984375,
             "height": 303.46307373046877
         }
     },
@@ -895,7 +895,7 @@
     "m_Hidden": false,
     "m_ShaderOutputName": "Occlusion",
     "m_StageCapability": 2,
-    "m_Value": 1.0,
+    "m_Value": 3.0,
     "m_DefaultValue": 1.0,
     "m_Labels": [],
     "m_LiteralMode": false
@@ -1508,7 +1508,7 @@
     "m_Hidden": false,
     "m_ShaderOutputName": "Power",
     "m_StageCapability": 3,
-    "m_Value": 1.0,
+    "m_Value": 0.5,
     "m_DefaultValue": 1.0,
     "m_Labels": [],
     "m_LiteralMode": false
