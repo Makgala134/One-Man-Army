@@ -6,6 +6,11 @@ TagManager:
   tags:
   - Can Pick Up
   - Hold layer
+  - 1st room
+  - 2nd room
+  - '3rd room '
+  - '4th room '
+  - '5th room '
   layers:
   - Default
   - TransparentFX

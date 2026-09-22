@@ -8,6 +8,8 @@ public class Dialogue : MonoBehaviour
 {
     public TextMeshProUGUI textComponent;
     public string[] lines;
+    public int roomline;
+
     public float textSpeed;
 
     private int index;
@@ -44,6 +46,7 @@ public class Dialogue : MonoBehaviour
         StartCoroutine(TypeLine());
 
     }
+
 
     IEnumerator TypeLine()
     {
