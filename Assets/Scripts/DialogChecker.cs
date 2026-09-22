@@ -12,95 +12,55 @@ public class DialogChecker : MonoBehaviour
     public string[] DIALOGTEXT;
     public float textSpeed;
     private int index;
+    private bool inRoomTwo = false;
+    public BoxCollider thirdLesson;
+    public GameObject TwoLesson;
 
+    private void Update()
+    {
+        if (inRoomTwo)
+        {
+          
+                if (Input.GetMouseButtonDown(0) )
+                {
+                    text.text = " LadyLuck: I heard some noise coming from here I came to check it out.  I gave the cadets a 15 recess, I'm supposed to be heading back. Why are all the screens showin no siginal?";
+                    TwoLesson.SetActive(false);
+                    thirdLesson.enabled = true;
+                    
+                }
+
+            }
+        
+    }
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("1st room"))
         {
-            // dialog.enabled = true;
-            displaybox.SetActive(true);
-            foreach (char c in DIALOGTEXT[index].ToCharArray())
+            if (index == 0)
             {
+          
+                text.text = "LadyLuck Thoughts : I must've dropped my ID card after training...Colonel Spike said she saw it in here.";
 
-                text.text += c;
-                StartCoroutine(TypeLine());
-                text.text = DIALOGTEXT[index];
+
             }
-           
-
         }
+        else
         if (other.CompareTag("2nd room"))
         {
-            // dialog.enabled = true;
             displaybox.SetActive(true);
-            foreach (char c in DIALOGTEXT[index].ToCharArray())
-            {
+            text.text = "General Dane: Are the cadets finished with their training? What are you doing in the camera room? ";
 
-                text.text += c;
-                StartCoroutine(TypeLine());
-                text.text = DIALOGTEXT[index];
-            }
+            inRoomTwo = true;
+
 
         }
-        if (other.CompareTag("3rd room"))
-        {
-            // dialog.enabled = true;
-            displaybox.SetActive(true);
-            foreach (char c in DIALOGTEXT[index].ToCharArray())
-            {
-
-                text.text += c;
-                StartCoroutine(TypeLine());
-                text.text = DIALOGTEXT[index];
-            }
-
-        }
-        if (other.CompareTag("4th room"))
-        {
-            // dialog.enabled = true;
-            displaybox.SetActive(true);
-            foreach (char c in DIALOGTEXT[index].ToCharArray())
-            {
-
-                text.text += c;
-                StartCoroutine(TypeLine());
-                text.text = DIALOGTEXT[index];
-            }
-
-        }
-        if (other.CompareTag("5th room"))
-        {
-            // dialog.enabled = true;
-            displaybox.SetActive(true);
-            foreach (char c in DIALOGTEXT[index].ToCharArray())
-            {
-
-                text.text += c;
-                StartCoroutine(TypeLine());
-                text.text = DIALOGTEXT[index];
-            }
-
-        }
-        if (other.CompareTag("6th room"))
-        {
-            // dialog.enabled = true;
-            displaybox.SetActive(true);
-            foreach (char c in DIALOGTEXT[index].ToCharArray())
-            {
-
-                text.text += c;
-                StartCoroutine(TypeLine());
-                text.text = DIALOGTEXT[index];
-            }
-
-        }
+ 
 
     }
     IEnumerator TypeLine()
     {
         foreach (char c in DIALOGTEXT[index].ToCharArray())
         {
-
             yield return new WaitForSeconds(textSpeed);
         }
 
@@ -108,41 +68,27 @@ public class DialogChecker : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.CompareTag("1st room"))
-        {
-            //dialog.enabled = false;
-            displaybox.SetActive(false);
-        }
-
+   
         if (other.CompareTag("2nd room"))
         {
             //dialog.enabled = false;
             displaybox.SetActive(false);
         }
 
-        if (other.CompareTag("3rd room"))
-        {
-            //dialog.enabled = false;
-            displaybox.SetActive(false);
-        }
-
-        if (other.CompareTag("4th room"))
-        {
-            //dialog.enabled = false;
-            displaybox.SetActive(false);
-        }
-
-        if (other.CompareTag("5th room"))
-        {
-            //dialog.enabled = false;
-            displaybox.SetActive(false);
-        }
-        if (other.CompareTag("6th room"))
-        {
-            //dialog.enabled = false;
-            displaybox.SetActive(false);
-        }
-
-
+   
+        
     }
+    void NextLine()
+    {
+      
+        if (index < DIALOGTEXT.Length - 1)
+        {
+            index++;
+        }
+        else
+        {
+            gameObject.SetActive(false);
+        }
+    }
+
 }
