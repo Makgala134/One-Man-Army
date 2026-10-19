@@ -12,7 +12,7 @@ using UnityEditor;
 public class Timer : MonoBehaviour
 {
     [Header("Timer Settings")]
-    public float timeRemaining = 30f; // Total time in seconds
+    public float timeRemaining = 300f; // Total time in seconds
     public bool timerIsActive = true;
 
     [Header("UI Components")]
@@ -64,7 +64,7 @@ public class Timer : MonoBehaviour
 
     void OnTimerEnd()
     {
-        SceneManager.LoadScene(1); // Execute whatever happens when time hits 0
+        SceneManager.LoadScene(0); // Execute whatever happens when time hits 0
     }
     public class MainMenu : MonoBehaviour
     {
