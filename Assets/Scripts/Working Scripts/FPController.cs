@@ -72,6 +72,7 @@ public class FPController : MonoBehaviour
         Cursor.visible = false;
         CreatePickupPrompt();
     }
+
     private void Update()
     {
         if (cameraTransform == null) return;
