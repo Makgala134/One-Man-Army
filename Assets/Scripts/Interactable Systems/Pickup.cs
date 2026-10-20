@@ -78,6 +78,8 @@ public class Pickup : MonoBehaviour
         transform.SetParent(holdPoint);
         transform.localPosition = Vector3.zero;
         transform.localRotation = Quaternion.identity;
+
+        
     }
 
     private void Drop()
@@ -89,5 +91,7 @@ public class Pickup : MonoBehaviour
 
         // Restore physics
         if (rb != null) rb.isKinematic = false;
+
+
     }
 }
