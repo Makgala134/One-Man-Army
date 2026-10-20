@@ -1205,6 +1205,7 @@ GameObject:
   m_StaticEditorFlags: 0
   m_IsActive: 0
 <<<<<<< HEAD
+<<<<<<< HEAD
 --- !u!199 &549587742
 ParticleSystemRenderer:
   serializedVersion: 7
@@ -6871,6 +6872,8 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 0
+=======
+>>>>>>> parent of ec6ef78 (main menu updates)
 =======
 >>>>>>> parent of ec6ef78 (main menu updates)
 --- !u!108 &1965040394
