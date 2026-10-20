@@ -5,38 +5,41 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
+  - enabled: 0
+    path: Assets/Scenes/Working Scenes/Introduction.unity
+    guid: 2fffc86b3ead7744a95846f8b250e669
   - enabled: 1
     path: Assets/Scenes/Working Scenes/Main Menu.unity
     guid: 1a50d80e3f9be6e45a81ed2e0c1266ea
-  - enabled: 1
-    path: Assets/Scenes/Working Scenes/Introduction.unity
-    guid: 2fffc86b3ead7744a95846f8b250e669
   - enabled: 1
     path: Assets/Scenes/game.unity
     guid: 539c2461b15fad94694920e9f1b40035
   - enabled: 0
     path: Assets/Scenes/Mechanics.unity
     guid: 3d07e807903608a4d9766ecb77d61568
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Camera Room.unity
     guid: 6be1177fdfdba6948a71fbdbdc850ead
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Control Room.unity
     guid: db9fcd40ee396d7438dc4e15054ead94
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/ID Storage Room.unity
     guid: 9535bcec8e1a67a46a33f8b715b56f1a
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Generals Office.unity
     guid: 469a4ddde8ae6d145aacbc6b9a8b5cbb
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Record Room.unity
     guid: 59eb672c591374747827a66f2547a5fa
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Testing Room.unity
     guid: da25ce62c75687a47b1d29e14fe2bf5f
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Hallway.unity
     guid: d4cfec4131d85aa48b7a8667ffc6ef62
+  - enabled: 0
+    path: Assets/game.unity
+    guid: 3f8e8e4614ebf25449af906259b764f9
   m_configObjects: {}
   m_UseUCBPForAssetBundles: 0
