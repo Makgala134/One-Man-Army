@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.SceneManagement;
+using System.Security.Cryptography;
+
 
 
 #if UNITY_EDITOR
@@ -19,7 +21,6 @@ public class Timer : MonoBehaviour
     [Header("Countdown Settings")]
     public float countdownStartTime = 10f; // Show the big countdown for the last 10 seconds
 
-
     [Header("Audio")]
     public AudioClip countdownSound; // Drag your countdown sound clip here
     public AudioSource audioSource; // Optional: one is added automatically if left empty
@@ -28,6 +29,7 @@ public class Timer : MonoBehaviour
     [Header("UI Components")]
     public TextMeshProUGUI timerText; // Drag your UI text here
     public TextMeshProUGUI countdownText; // Optional: big centre-screen countdown text (leave empty to skip)
+
     void Start()
     {
         if (audioSource == null)
@@ -45,6 +47,7 @@ public class Timer : MonoBehaviour
         if (countdownText != null)
             countdownText.gameObject.SetActive(false);
     }
+
     void Update()
     {
         if (timerIsActive)
@@ -53,7 +56,7 @@ public class Timer : MonoBehaviour
             {
                 // Subtract the time passed since the last frame
                 timeRemaining -= Time.deltaTime;
-                DisplayTime(timeRemaining);
+                DisplayTime(timeRemaining); 
                 UpdateCountdown(timeRemaining);
             }
             else
@@ -61,8 +64,8 @@ public class Timer : MonoBehaviour
                 Debug.Log("Time has run out!");
                 timeRemaining = 0;
                 timerIsActive = false;
-                DisplayTime(timeRemaining);
-                if(countdownText != null)
+                DisplayTime(timeRemaining); 
+                if (countdownText != null)
                     countdownText.gameObject.SetActive(false);
                 // Add your custom game over or event logic here
                 OnTimerEnd();
@@ -88,17 +91,17 @@ public class Timer : MonoBehaviour
         if (timeLeft <= countdownStartTime && timeLeft > 0)
         {
             int secondsLeft = Mathf.CeilToInt(timeLeft);
-
+ 
             // Turn the main timer red for the final stretch
             timerText.color = Color.red;
-
+ 
             // Play the countdown sound once when the 10 second mark is reached
             if (!countdownSoundPlayed && countdownSound != null)
             {
                 audioSource.PlayOneShot(countdownSound);
                 countdownSoundPlayed = true;
             }
-
+ 
             if (countdownText != null)
             {
                 countdownText.gameObject.SetActive(true);
@@ -119,12 +122,6 @@ public class Timer : MonoBehaviour
     void OnTimerEnd()
     {
         SceneManager.LoadScene(0); // Execute whatever happens when time hits 0
-        {
-            Time.timeScale = 1f;
-            Cursor.lockState = CursorLockMode.None;
-            Cursor.visible = true;
-            SceneManager.LoadScene(0);
-        }
     }
     public class MainMenu : MonoBehaviour
     {
@@ -135,3 +132,4 @@ public class Timer : MonoBehaviour
     }
 }
 
+    
