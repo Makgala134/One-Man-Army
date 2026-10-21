@@ -13,7 +13,9 @@ public class Pickup : MonoBehaviour
     private Collider itemCollider;
     private bool isPlayerInRange = false;
     private bool isBeingHeld = false;
+    public AudioClip pickupSound;
 
+    [Range(0f, 1f)] public float volume = 1f;
     private void Awake()
     {
         rb = GetComponent<Rigidbody>();
@@ -48,6 +50,32 @@ public class Pickup : MonoBehaviour
                 uiText.gameObject.SetActive(true);
             }
         }
+        // If the player is already holding this item, we don't want to show the pickup prompt again
+        else if (other.CompareTag("Player") && isBeingHeld)
+        {
+            isPlayerInRange = false;
+            if (uiText != null)
+            {
+                uiText.gameObject.SetActive(false);
+            }
+        }
+        
+        if (other.CompareTag("Player"))
+        {
+            // Play the sound in 3D space at the item's location.
+            // This creates a temporary audio player so the sound keeps playing 
+            // even after this specific game object is destroyed.
+        if (pickupSound != null)
+        {
+            AudioSource.PlayClipAtPoint(pickupSound, transform.position, volume);
+        }
+            
+            // Put any inventory or score tracking logic here
+            Debug.Log("Item Picked Up!");
+
+            // Remove the pickup object from the scene
+           
+        }
     }
 
     private void OnTriggerExit(Collider other)
@@ -78,9 +106,20 @@ public class Pickup : MonoBehaviour
         transform.SetParent(holdPoint);
         transform.localPosition = Vector3.zero;
         transform.localRotation = Quaternion.identity;
-
-        
     }
+
+        //sound for pick up object
+        //AudioManager.instance.Play("PickUp");
+
+
+        //Drag your audio file into this slot in the Inspector
+   
+
+    // Adjust the volume of the pickup sound (0.0 to 1.0)
+ 
+
+    
+    
 
     private void Drop()
     {
