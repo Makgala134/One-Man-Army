@@ -30,6 +30,7 @@ public class Pickup : MonoBehaviour
             if (!isBeingHeld)
             {
                 PickUp();
+
             }
             else
             {
@@ -37,6 +38,7 @@ public class Pickup : MonoBehaviour
             }
         }
     }
+
 
     private void OnTriggerEnter(Collider other)
     {
@@ -67,7 +69,7 @@ public class Pickup : MonoBehaviour
             // even after this specific game object is destroyed.
         if (pickupSound != null)
         {
-            AudioSource.PlayClipAtPoint(pickupSound, transform.position, volume);
+                AudioSource.PlayClipAtPoint(pickupSound, transform.position, volume);
         }
             
             // Put any inventory or score tracking logic here
