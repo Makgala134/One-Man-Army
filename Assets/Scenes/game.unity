@@ -120116,7 +120116,7 @@ MeshCollider:
   serializedVersion: 5
   m_Convex: 0
   m_CookingOptions: 30
-  m_Mesh: {fileID: 1255012734}
+  m_Mesh: {fileID: 721395243}
 --- !u!33 &257943329
 MeshFilter:
   m_ObjectHideFlags: 10
@@ -192368,7 +192368,7 @@ MeshCollider:
   serializedVersion: 5
   m_Convex: 0
   m_CookingOptions: 30
-  m_Mesh: {fileID: 0}
+  m_Mesh: {fileID: 1542361762}
 --- !u!23 &486715299
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -258524,6 +258524,8 @@ MonoBehaviour:
   promptMessage: Press [E] to Pick Up
   uiText: {fileID: 0}
   holdPoint: {fileID: 0}
+  pickupSound: {fileID: 0}
+  volume: 1
 --- !u!65 &695481899
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -294286,7 +294288,7 @@ MeshCollider:
   serializedVersion: 5
   m_Convex: 0
   m_CookingOptions: 30
-  m_Mesh: {fileID: 1831374556}
+  m_Mesh: {fileID: 322459718}
 --- !u!33 &706117254
 MeshFilter:
   m_ObjectHideFlags: 10
@@ -298048,7 +298050,7 @@ MeshCollider:
   serializedVersion: 5
   m_Convex: 0
   m_CookingOptions: 30
-  m_Mesh: {fileID: 1831374556}
+  m_Mesh: {fileID: 1484630968}
 --- !u!33 &745712822
 MeshFilter:
   m_ObjectHideFlags: 10
@@ -339052,6 +339054,8 @@ MonoBehaviour:
   promptMessage: Press [E] to Pick Up
   uiText: {fileID: 1687642435}
   holdPoint: {fileID: 1741687895}
+  pickupSound: {fileID: 0}
+  volume: 1
 --- !u!1001 &875978173
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -348251,7 +348255,7 @@ MeshCollider:
   serializedVersion: 5
   m_Convex: 0
   m_CookingOptions: 30
-  m_Mesh: {fileID: 721395243}
+  m_Mesh: {fileID: 1898574482}
 --- !u!33 &896349156
 MeshFilter:
   m_ObjectHideFlags: 10
@@ -374606,6 +374610,8 @@ MonoBehaviour:
   promptMessage: Press [E] to Pick Up
   uiText: {fileID: 1687642435}
   holdPoint: {fileID: 1741687895}
+  pickupSound: {fileID: 0}
+  volume: 1
 --- !u!43 &982562846
 Mesh:
   m_ObjectHideFlags: 0
@@ -780087,6 +780093,8 @@ MonoBehaviour:
   promptMessage: Press [E] to Pick Up
   uiText: {fileID: 1687642435}
   holdPoint: {fileID: 1741687895}
+  pickupSound: {fileID: 0}
+  volume: 1
 --- !u!43 &1375714327
 Mesh:
   m_ObjectHideFlags: 0
@@ -870083,7 +870091,7 @@ MeshCollider:
   serializedVersion: 5
   m_Convex: 0
   m_CookingOptions: 30
-  m_Mesh: {fileID: 786506819}
+  m_Mesh: {fileID: 1255012734}
 --- !u!33 &1625444200
 MeshFilter:
   m_ObjectHideFlags: 10
@@ -877694,7 +877702,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!108 &1646714794
 Light:
   m_ObjectHideFlags: 0
@@ -1023294,6 +1023302,8 @@ MonoBehaviour:
   promptMessage: Press [E] to Pick Up
   uiText: {fileID: 1687642435}
   holdPoint: {fileID: 1741687895}
+  pickupSound: {fileID: 0}
+  volume: 1
 --- !u!65 &1815882319
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1168293,6 +1168303,8 @@ MonoBehaviour:
   promptMessage: Press [E] to Pick Up
   uiText: {fileID: 1687642435}
   holdPoint: {fileID: 1741687895}
+  pickupSound: {fileID: 0}
+  volume: 1
 --- !u!4 &8138499155536346520
 Transform:
   m_ObjectHideFlags: 0
@@ -1168331,6 +1168343,8 @@ MonoBehaviour:
   promptMessage: Press [E] to Pick Up
   uiText: {fileID: 1687642435}
   holdPoint: {fileID: 1741687895}
+  pickupSound: {fileID: 0}
+  volume: 1
 --- !u!33 &8255733193984361122
 MeshFilter:
   m_ObjectHideFlags: 10
@@ -1170428,6 +1170442,8 @@ MonoBehaviour:
   promptMessage: Press [E] to Pick Up
   uiText: {fileID: 1687642435}
   holdPoint: {fileID: 1741687895}
+  pickupSound: {fileID: 0}
+  volume: 1
 --- !u!4 &8761731923550979050
 Transform:
   m_ObjectHideFlags: 0
@@ -1170703,6 +1170719,8 @@ MonoBehaviour:
   promptMessage: Press [E] to Pick Up
   uiText: {fileID: 1687642435}
   holdPoint: {fileID: 1741687895}
+  pickupSound: {fileID: 0}
+  volume: 1
 --- !u!65 &8781994812931194593
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1170852,6 +1170870,8 @@ MonoBehaviour:
   promptMessage: Press [E] to Pick Up
   uiText: {fileID: 1687642435}
   holdPoint: {fileID: 1741687895}
+  pickupSound: {fileID: 0}
+  volume: 1
 --- !u!1 &9181708867461324217
 GameObject:
   m_ObjectHideFlags: 0
