@@ -14,6 +14,7 @@ public class FPController : MonoBehaviour
     public float gravity = -9.81f;
     public float jumpHeight = 3f;
 
+    private Animator animator;
     [Header("Look Settings")]
     public Transform cameraTransform;
     public Camera cam;
@@ -47,6 +48,7 @@ public class FPController : MonoBehaviour
 
     private void Awake()
     {
+        animator = GetComponent<Animator>();
         controller = GetComponent<CharacterController>();
         if (controller == null)
         {
@@ -115,10 +117,15 @@ public class FPController : MonoBehaviour
 
         if (controller.isGrounded && velocity.y < 0)
         {
+            animator.SetBool("isMoving", true);
             velocity.y = -2f;
         }
+        else
+        {
+            animator.SetBool("isMoving", false);
+        }
 
-        velocity.y += gravity * Time.deltaTime;
+            velocity.y += gravity * Time.deltaTime;
 
         controller.Move(velocity * Time.deltaTime);
     }
