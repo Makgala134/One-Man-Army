@@ -418,7 +418,7 @@ public partial class @Control: IInputActionCollection2, IDisposable
                     ""path"": ""<Keyboard>/e"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": "";Keyboard;Mouse"",
+                    ""groups"": "";Keyboard;Mouse;MyPlayer"",
                     ""action"": ""Interact"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
