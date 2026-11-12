@@ -87,10 +87,3 @@ public class ObjectUpdatedDialogueTrigger : MonoBehaviour
     }
 }
 
-
-
-
-
-
-
-
