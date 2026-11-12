@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: f7ba695d1cecbd64d970551f93d693a0
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - countdownSound: {fileID: 8300000, guid: a54b62bade1b3bc449d82e07643b5656, type: 3}
+  - audioSource: {instanceID: 0}
+  - timerText: {instanceID: 0}
+  - countdownText: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

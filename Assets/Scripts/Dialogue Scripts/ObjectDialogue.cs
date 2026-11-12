@@ -16,9 +16,9 @@ public class ObjectDialogue : MonoBehaviour
     private int index;
     private bool isTyping;
     private bool isDialogueActive;
-
+      
     public bool IsDialogueActive => isDialogueActive;
-
+    
     private void Awake()
     {
         if (textComponent != null)

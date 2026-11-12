@@ -60,7 +60,7 @@ public class ObjectDialogueTrigger : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (player != null && other.gameObject == player)
+        if (player != null && other.transform.root == player.transform.root)
         {
             playerInRange = true;
         }
@@ -68,7 +68,7 @@ public class ObjectDialogueTrigger : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if (player != null && other.gameObject == player)
+        if (player != null && other.transform.root == player.transform.root)
         {
             playerInRange = false;
 
