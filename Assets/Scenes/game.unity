@@ -173923,8 +173923,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CodeDoor
   openPrompt: Press [E] to Open Door
   closePrompt: Press [E] to Close Door
-  uiText: {fileID: 0}
-  doorPivot: {fileID: 388082488}
+  uiText: {fileID: 1983808936}
+  doorPivot: {fileID: 1376305383}
   openAngle: 90
   speed: 5
 --- !u!95 &388082487
@@ -506467,8 +506467,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CodeDoor
   openPrompt: Press [E] to Open Door
   closePrompt: Press [E] to Close Door
-  uiText: {fileID: 0}
-  doorPivot: {fileID: 2043644239}
+  uiText: {fileID: 1983808936}
+  doorPivot: {fileID: 66730501}
   openAngle: 90
   speed: 5
 --- !u!95 &1191929337
@@ -547010,8 +547010,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CodeDoor
   openPrompt: Press [E] to Open Door
   closePrompt: Press [E] to Close Door
-  uiText: {fileID: 0}
-  doorPivot: {fileID: 388082488}
+  uiText: {fileID: 1983808936}
+  doorPivot: {fileID: 1376305383}
   openAngle: 90
   speed: 5
 --- !u!65 &1242812140
@@ -780803,8 +780803,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CodeDoor
   openPrompt: Press [E] to Open Door
   closePrompt: Press [E] to Close Door
-  uiText: {fileID: 0}
-  doorPivot: {fileID: 1191929338}
+  uiText: {fileID: 1983808936}
+  doorPivot: {fileID: 1376305383}
   openAngle: 90
   speed: 5
 --- !u!65 &1376305387
