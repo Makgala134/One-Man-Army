@@ -3169,7 +3169,7 @@ MonoBehaviour:
   openPrompt: Press [E] to Open Door
   closePrompt: Press [E] to Close Door
   uiText: {fileID: 0}
-  doorPivot: {fileID: 1242812136}
+  doorPivot: {fileID: 388082488}
   openAngle: 90
   speed: 5
 --- !u!95 &388082487
@@ -4637,7 +4637,7 @@ MonoBehaviour:
   openPrompt: Press [E] to Open Door
   closePrompt: Press [E] to Close Door
   uiText: {fileID: 0}
-  doorPivot: {fileID: 0}
+  doorPivot: {fileID: 900812214}
   openAngle: 90
   speed: 5
 --- !u!95 &900812213
@@ -6223,7 +6223,7 @@ MonoBehaviour:
   openPrompt: Press [E] to Open Door
   closePrompt: Press [E] to Close Door
   uiText: {fileID: 0}
-  doorPivot: {fileID: 0}
+  doorPivot: {fileID: 1191929338}
   openAngle: 90
   speed: 5
 --- !u!95 &1191929337
@@ -14643,7 +14643,7 @@ MonoBehaviour:
   openPrompt: Press [E] to Open Door
   closePrompt: Press [E] to Close Door
   uiText: {fileID: 0}
-  doorPivot: {fileID: 0}
+  doorPivot: {fileID: 2043644239}
   openAngle: 90
   speed: 5
 --- !u!95 &2043644238
