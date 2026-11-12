@@ -121,7 +121,7 @@ public class Timer : MonoBehaviour
 
     void OnTimerEnd()
     {
-        SceneManager.LoadScene(0); // Execute whatever happens when time hits 0
+        SceneManager.LoadScene(1); // Execute whatever happens when time hits 0
     }
     public class MainMenu : MonoBehaviour
     {

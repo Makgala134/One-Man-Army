@@ -8,10 +8,10 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/Working Scenes/Introduction.unity
     guid: 2fffc86b3ead7744a95846f8b250e669
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Introduction.unity
     guid: 0e3eed5a444805f44ab5b187cf1d16ca
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Main Menu.unity
     guid: 1a50d80e3f9be6e45a81ed2e0c1266ea
   - enabled: 1
@@ -44,5 +44,8 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/game.unity
     guid: 3f8e8e4614ebf25449af906259b764f9
+  - enabled: 0
+    path: Assets/Scenes/Game mechanics.unity
+    guid: 8e9da99e21a66b84ea238b0b32212c4a
   m_configObjects: {}
   m_UseUCBPForAssetBundles: 0
