@@ -4,12 +4,12 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.SceneManagement;
 using System.Security.Cryptography;
-
-
-
-#if UNITY_EDITOR
 using UnityEditor;
-#endif
+using UnityEngine.UI;
+using System;
+using System.ComponentModel.Design.Serialization;
+
+
 
 public class Timer : MonoBehaviour
 {
@@ -18,31 +18,61 @@ public class Timer : MonoBehaviour
     public bool timerIsActive = true;
 
 
+
+
     [Header("Countdown Settings")]
     public float countdownStartTime = 10f; // Show the big countdown for the last 10 seconds
+
+
+
 
     [Header("Audio")]
     public AudioClip countdownSound; // Drag your countdown sound clip here
     public AudioSource audioSource; // Optional: one is added automatically if left empty
+
+
+
+
     private bool countdownSoundPlayed = false;
+
+
+
 
     [Header("UI Components")]
     public TextMeshProUGUI timerText; // Drag your UI text here
     public TextMeshProUGUI countdownText; // Optional: big centre-screen countdown text (leave empty to skip)
 
+
+
+
+    //[Header("ScreenFlash Settings")]
+    //public Image flashimage;
+    // public Color flashcolour = new Color(1f, 0f, 0f, 1f); // Red with 100% opacity
+    //public float flashDuration = 0.5f; // Duration of the flash in seconds
+    //public GameObject ScreenFlash; // Drag your UI image here (leave empty to skip)
+    // private bool isFlashing = false;
+    //private Coroutine flashCoroutine;
+
+    [SerializeField] ScreenFlash screenFlash; // Reference to the ScreenFlash script
+
     void Start()
     {
         if (audioSource == null)
+
         {
             audioSource = GetComponent<AudioSource>();
+
             if (audioSource == null)
+
                 audioSource = gameObject.AddComponent<AudioSource>();
+
         }
         audioSource.playOnAwake = false;
+
         countdownSoundPlayed = false;
 
         // Make sure the timer is 6 minutes even if an old value was saved in the Inspector
-        timeRemaining = 360f;
+        timeRemaining = 60f;
 
         if (countdownText != null)
             countdownText.gameObject.SetActive(false);
@@ -56,23 +86,40 @@ public class Timer : MonoBehaviour
             {
                 // Subtract the time passed since the last frame
                 timeRemaining -= Time.deltaTime;
+
                 DisplayTime(timeRemaining); 
+
                 UpdateCountdown(timeRemaining);
+
+               // if (timeRemaining <= countdownStartTime && !isFlashing)
+                {
+                    // Start the screen flash effect
+                    //flashCoroutine = StartCoroutine(ScreenFlash());
+                }
             }
             else
             {
                 Debug.Log("Time has run out!");
+
                 timeRemaining = 0;
+
                 timerIsActive = false;
+
                 DisplayTime(timeRemaining); 
+
                 if (countdownText != null)
+
                     countdownText.gameObject.SetActive(false);
+
                 // Add your custom game over or event logic here
                 OnTimerEnd();
             }
         }
+
+        
     }
 
+    
     // Formats the raw float seconds into Minutes:Seconds layout
     void DisplayTime(float timeToDisplay)
     {
@@ -91,7 +138,9 @@ public class Timer : MonoBehaviour
         if (timeLeft <= countdownStartTime && timeLeft > 0)
         {
             int secondsLeft = Mathf.CeilToInt(timeLeft);
- 
+
+            //ScreenFlash.StartFlash(.25f, 0.5f, Color.red); // Flash the screen red for 0.25 seconds with 50% opacity
+
             // Turn the main timer red for the final stretch
             timerText.color = Color.red;
  
@@ -110,6 +159,7 @@ public class Timer : MonoBehaviour
         }
     }
 
+  
     void QuitGame()
     {
 #if UNITY_EDITOR
