@@ -55,7 +55,7 @@ public class Timer : MonoBehaviour
     //private Coroutine flashCoroutine;
 
     [SerializeField] ScreenFlash screenFlash; // Reference to the ScreenFlash script
-
+    [SerializeField] Color newColor = Color.red; // Color for the flash effect
     void Start()
     {
         if (audioSource == null)
@@ -140,7 +140,7 @@ public class Timer : MonoBehaviour
         {
             int secondsLeft = Mathf.CeilToInt(timeLeft);
 
-            //ScreenFlash.StartFlash(.25f, 0.5f, Color.red); // Flash the screen red for 0.25 seconds with 50% opacity
+            screenFlash.StartFlash(.25f, 0.5f, Color.red); // Flash the screen red for 0.25 seconds with 50% opacity
 
             // Turn the main timer red for the final stretch
             timerText.color = Color.red;
