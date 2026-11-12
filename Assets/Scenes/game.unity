@@ -506468,7 +506468,7 @@ MonoBehaviour:
   openPrompt: Press [E] to Open Door
   closePrompt: Press [E] to Close Door
   uiText: {fileID: 0}
-  doorPivot: {fileID: 1191929338}
+  doorPivot: {fileID: 2043644239}
   openAngle: 90
   speed: 5
 --- !u!95 &1191929337
