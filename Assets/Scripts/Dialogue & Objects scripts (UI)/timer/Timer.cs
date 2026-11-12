@@ -42,7 +42,8 @@ public class Timer : MonoBehaviour
     public TextMeshProUGUI timerText; // Drag your UI text here
     public TextMeshProUGUI countdownText; // Optional: big centre-screen countdown text (leave empty to skip)
 
-
+    [Header("Game Over")]
+    public GameOverManager gameOverManager;
 
 
     //[Header("ScreenFlash Settings")]
@@ -171,7 +172,14 @@ public class Timer : MonoBehaviour
 
     void OnTimerEnd()
     {
-        FindAnyObjectByType<GameOverManager>().ShowGameOver(); // Execute whatever happens when time hits 0
+        if (gameOverManager != null)
+        {
+            gameOverManager.ShowGameOver();
+        }
+        else
+        {
+            Debug.LogError("Game Over Manager has not been assigned!");
+        }
     }
     public class MainMenu : MonoBehaviour
     {
