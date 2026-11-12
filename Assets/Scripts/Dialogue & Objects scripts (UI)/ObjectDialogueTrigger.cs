@@ -1,7 +1,7 @@
 using UnityEngine;
 using TMPro;
-public class ObjectUpdatedDialogueTrigger : MonoBehaviour
 
+public class ObjectDialogueTrigger : MonoBehaviour
 {
     [Header("References")]
     public ObjectDialogue objectDialogue;
@@ -13,7 +13,6 @@ public class ObjectUpdatedDialogueTrigger : MonoBehaviour
     public string promptMessage = "Press F to Investigate";
 
     private bool playerInRange;
-    private bool objectPickedUp;
 
     private void Start()
     {
@@ -25,34 +24,43 @@ public class ObjectUpdatedDialogueTrigger : MonoBehaviour
 
     private void Update()
     {
-        if (objectPickedUp || !playerInRange || objectDialogue == null)
-        {
-            HidePrompt();
+        if (!playerInRange || objectDialogue == null)
             return;
-        }
 
         if (objectDialogue.IsDialogueActive)
         {
-            HidePrompt();
+            if (interactionPrompt != null)
+            {
+                interactionPrompt.gameObject.SetActive(false);
+            }
+
             return;
         }
 
         if (interactionPrompt != null)
         {
             interactionPrompt.text = promptMessage;
-            interactionPrompt.gameObject.SetActive(true);
+
+            if (!interactionPrompt.gameObject.activeSelf)
+            {
+                interactionPrompt.gameObject.SetActive(true);
+            }
         }
 
         if (Input.GetKeyDown(interactionKey))
         {
-            HidePrompt();
+            if (interactionPrompt != null)
+            {
+                interactionPrompt.gameObject.SetActive(false);
+            }
+
             objectDialogue.StartDialogue();
         }
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (player != null && other.gameObject == player)
+        if (player != null && other.transform.root == player.transform.root)
         {
             playerInRange = true;
         }
@@ -60,30 +68,16 @@ public class ObjectUpdatedDialogueTrigger : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if (player != null && other.gameObject == player)
+        if (player != null && other.transform.root == player.transform.root)
         {
             playerInRange = false;
-            HidePrompt();
+
+            if (interactionPrompt != null)
+            {
+                interactionPrompt.gameObject.SetActive(false);
+            }
         }
     }
 
-    private void HidePrompt()
-    {
-        if (interactionPrompt != null)
-        {
-            interactionPrompt.gameObject.SetActive(false);
-        }
-    }
-
-    // Hide the prompt when the object is disabled or destroyed
-    private void OnDisable()
-    {
-        HidePrompt();
-    }
-
-    private void OnDestroy()
-    {
-        HidePrompt();
-    }
 }
 
