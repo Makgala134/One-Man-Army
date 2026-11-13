@@ -332,7 +332,7 @@
                     "path": "<Keyboard>/e",
                     "interactions": "",
                     "processors": "",
-                    "groups": ";Keyboard;Mouse",
+                    "groups": ";Keyboard;Mouse;MyPlayer",
                     "action": "Interact",
                     "isComposite": false,
                     "isPartOfComposite": false
