@@ -11,11 +11,13 @@ public class Keypad : MonoBehaviour
     [SerializeField] private TextMeshProUGUI Answer;
     [SerializeField] private Animator DoorTrigger;
     [SerializeField] private GameObject keypadPanel;
+    [SerializeField] private Timer timer;
     [SerializeField] private MonoBehaviour FPController; // Reference to the player's look script
     [SerializeField] private MonoBehaviour playerLook; // Reference to the player's look script
     [SerializeField] private float doorOpenTime = 1f; // Time in seconds for the door to stay open before closing
     private string AnswerText = "1234";
     private bool keypadOpen = false;
+    private bool showingInvalid = false;
 
     private void Start()
     {
@@ -43,14 +45,20 @@ public class Keypad : MonoBehaviour
 
     public void Number(int number)
     {
-        Answer.text += number.ToString();
-        Debug.Log("Number pressed: " + number);
+        //Answer.text += number.ToString();
+        //Debug.Log("Number pressed: " + number);
 
         //clears the invalid message when a number is pressed
-        if (Answer.text == "Invalid") Answer.text = ""; 
+        //if (Answer.text == "Invalid") Answer.text = ""; 
 
         if (Answer.text.Length < AnswerText.Length)
             Answer.text += number.ToString();
+
+        if (showingInvalid)
+        {
+            Answer.text = " ";
+            showingInvalid = false;
+        }
         
      }
 
@@ -64,6 +72,7 @@ public class Keypad : MonoBehaviour
         {
             Debug.Log("Correct code entered!");
             DoorTrigger.SetBool("IsOpen", true);
+            if (timer != null) timer.StopTimer(); 
             StartCoroutine("StopDoorAnimation");
             CloseKeypad();
           
@@ -71,16 +80,30 @@ public class Keypad : MonoBehaviour
         }
         else
         {
-            Debug.Log("Incorrect code. Try again.");
-            Answer.text = "Invalid"; // Clear the input for another attempt
+            //Debug.Log("Incorrect code. Try again.");
+            //Answer.text = "Invalid"; // Clear the input for another attempt
+            Answer.text = "Invalid"; // Show invalid message
+            showingInvalid = true; // Set the flag to indicate that the invalid message is being shown
+            StartCoroutine(ClearInvalidAfterDelay()); // Clear the invalid message after 1 second
+        }
+
+         timer.StopTimer(); // Call the StopTimer method on the Timer script 
+    }
+    private IEnumerator ClearInvalidAfterDelay()
+    {
+        yield return new WaitForSeconds(0.3f);
+        if (showingInvalid)
+        {
+            Answer.text = ""; // Clear the invalid message
+            showingInvalid = false;
         }
     }
 
-    private IEnumerator StopDoorAnimation()
-    {
-        yield return new WaitForSeconds(doorOpenTime);
+    //private IEnumerator StopDoorAnimation()
+   // {
+       // yield return new WaitForSeconds(doorOpenTime);
         
-    }
+    //}
 
     void Update()
 

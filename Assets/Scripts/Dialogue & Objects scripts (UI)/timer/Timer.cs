@@ -73,7 +73,7 @@ public class Timer : MonoBehaviour
         countdownSoundPlayed = false;
 
         // Make sure the timer is 6 minutes even if an old value was saved in the Inspector
-        timeRemaining = 60f;
+        timeRemaining = 90f;
 
         if (countdownText != null)
             countdownText.gameObject.SetActive(false);
@@ -168,7 +168,22 @@ public class Timer : MonoBehaviour
             }
         }
     }
+     public void StopTimer()
+    {
+        timerIsActive = false;
 
+        // hide the big coutdown and reset red tint
+        if (countdownText != null)
+            countdownText.gameObject.SetActive(false);
+
+        if (screenFlash != null)
+            screenFlash.gameObject.SetActive(false);
+        timerText.gameObject.SetActive(false);
+
+        timerText.color = Color.white; // Reset the timer text color to white
+
+
+    }
   
     void QuitGame()
     {
