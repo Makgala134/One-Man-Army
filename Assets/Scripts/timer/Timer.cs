@@ -146,7 +146,7 @@ public class Timer : MonoBehaviour
             // Play the countdown sound once when the 10 second mark is reached
             if (!countdownSoundPlayed && countdownSound != null)
             {
-                audioSource.PlayOneShot(countdownSound);
+                audioSource.PlayOneShot(countdownSound, 2.0f);
                 countdownSoundPlayed = true;
             }
 

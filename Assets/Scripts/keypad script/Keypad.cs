@@ -45,12 +45,6 @@ public class Keypad : MonoBehaviour
 
     public void Number(int number)
     {
-
-        if (showingInvalid)
-        {
-            Answer.text = "";
-            showingInvalid = false;
-        }
         //Answer.text += number.ToString();
         //Debug.Log("Number pressed: " + number);
 
@@ -58,16 +52,19 @@ public class Keypad : MonoBehaviour
         //if (Answer.text == "Invalid") Answer.text = ""; 
 
         if (Answer.text.Length < AnswerText.Length)
-        {
             Answer.text += number.ToString();
+
+        if (showingInvalid)
+        {
+            Answer.text = " ";
+            showingInvalid = false;
         }
-           
-    }
+        
+     }
 
     public void Clear ()
     {
         Answer.text = "";
-        showingInvalid = false;
     }
     public void Enter()
     {
@@ -76,7 +73,6 @@ public class Keypad : MonoBehaviour
             Debug.Log("Correct code entered!");
             //DoorTrigger.SetBool("IsOpen", true);
             DoorTrigger.SetTrigger("Open");
-
             if (timer != null) timer.StopTimer(); 
             //StartCoroutine("StopDoorAnimation");
             CloseKeypad();
@@ -92,7 +88,7 @@ public class Keypad : MonoBehaviour
             StartCoroutine(ClearInvalidAfterDelay()); // Clear the invalid message after 1 second
         }
 
-         //timer.StopTimer(); // Call the StopTimer method on the Timer script 
+         timer.StopTimer(); // Call the StopTimer method on the Timer script 
     }
     private IEnumerator ClearInvalidAfterDelay()
     {
@@ -113,8 +109,6 @@ public class Keypad : MonoBehaviour
     void Update()
 
     {
-        if (!keypadOpen) return;
-
         if (UnityEngine.InputSystem.Keyboard.current.spaceKey.wasPressedThisFrame)
             Number(1);
 
@@ -131,16 +125,19 @@ public class Keypad : MonoBehaviour
         keypadOpen = true;
         keypadPanel.SetActive(true);
         Answer.text = "";
-        showingInvalid = false;
 
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
         
-        if(playerLook != null) playerLook.enabled = false; // Disable the player's look script
+        if(playerLook != null)
+        {
+            playerLook.enabled = false; // Disable the player's look script
+        }
         
-        
-        if(FPController != null) FPController.enabled = false; // Disable the player's look script
-        
+        if(FPController != null)
+        {
+            FPController.enabled = false; // Disable the player's look script
+        }
     }
 
     public void CloseKeypad()
@@ -152,9 +149,13 @@ public class Keypad : MonoBehaviour
         Cursor.visible = false;
         // playerLook.enabled = true;
 
-        if(playerLook != null)playerLook.enabled = true; // Enable the player's look script
-        
-        if(FPController != null) FPController.enabled = true; // Enable the player's look script
-        
+        if(playerLook != null)
+        {
+            playerLook.enabled = true; // Enable the player's look script
+        }
+        if(FPController != null)
+        {
+            FPController.enabled = true; // Enable the player's look script
+        }
     }
 }

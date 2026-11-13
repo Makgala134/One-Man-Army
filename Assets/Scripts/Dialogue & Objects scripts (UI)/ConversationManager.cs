@@ -1,6 +1,8 @@
-using UnityEngine;
-using TMPro;
 using System.Collections;
+using TMPro;
+using UnityEngine;
+using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class ConversationManager : MonoBehaviour
 {
@@ -92,6 +94,16 @@ public class ConversationManager : MonoBehaviour
                 NextLine();
             }
         }
+
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+
+       // if (Input.GetMouseButtonDown(0))
+        {
+        //    SceneManager.LoadScene("Main Menu");
+       //     SceneManager.LoadScene(1);
+        }
+
     }
 
     private void DisplayLine()
@@ -183,5 +195,8 @@ public class ConversationManager : MonoBehaviour
 
         dialoguePanel.SetActive(false);
         toBeContinuedPanel.SetActive(true);
+
     }
-}
+
+
+        }
