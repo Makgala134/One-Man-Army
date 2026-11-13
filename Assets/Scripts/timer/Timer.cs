@@ -127,8 +127,8 @@ public class Timer : MonoBehaviour
         // Avoid negative display values
         if (timeToDisplay < 0) timeToDisplay = 0;
 
-        float minutes = Mathf.FloorToInt(timeToDisplay / 360);
-        float seconds = Mathf.FloorToInt(timeToDisplay % 360);
+        float minutes = Mathf.FloorToInt(timeToDisplay / 60);
+        float seconds = Mathf.FloorToInt(timeToDisplay % 60);
 
         // String formatting "00" ensures numbers under 10 show with a leading zero (e.g., 05 instead of 5)
         timerText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
