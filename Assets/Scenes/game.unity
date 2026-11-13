@@ -264,7 +264,7 @@ Animator:
   m_GameObject: {fileID: 8956422}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 9490abf02aa2afc4fa574f2348c02219, type: 2}
+  m_Controller: {fileID: 9100000, guid: fb90ccb2ec212034fbd8bc2398a06ec2, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -289,7 +289,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.EventSystems.EventTrigger
   m_Delegates:
-  - eventID: 0
+  - eventID: 9
     callback:
       m_PersistentCalls:
         m_Calls:
@@ -19633,7 +19633,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.000061035156, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &127665085
@@ -115753,7 +115753,7 @@ Animator:
   m_GameObject: {fileID: 235535863}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 9490abf02aa2afc4fa574f2348c02219, type: 2}
+  m_Controller: {fileID: 9100000, guid: fb90ccb2ec212034fbd8bc2398a06ec2, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -115778,7 +115778,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.EventSystems.EventTrigger
   m_Delegates:
-  - eventID: 0
+  - eventID: 9
     callback:
       m_PersistentCalls:
         m_Calls:
@@ -173077,7 +173077,7 @@ Animator:
   m_GameObject: {fileID: 358601881}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 9490abf02aa2afc4fa574f2348c02219, type: 2}
+  m_Controller: {fileID: 9100000, guid: fb90ccb2ec212034fbd8bc2398a06ec2, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -173102,7 +173102,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.EventSystems.EventTrigger
   m_Delegates:
-  - eventID: 0
+  - eventID: 9
     callback:
       m_PersistentCalls:
         m_Calls:
@@ -189519,7 +189519,7 @@ Animator:
   m_GameObject: {fileID: 486467443}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 9490abf02aa2afc4fa574f2348c02219, type: 2}
+  m_Controller: {fileID: 9100000, guid: fb90ccb2ec212034fbd8bc2398a06ec2, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -189544,7 +189544,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.EventSystems.EventTrigger
   m_Delegates:
-  - eventID: 0
+  - eventID: 9
     callback:
       m_PersistentCalls:
         m_Calls:
@@ -192167,7 +192167,7 @@ Animator:
   m_GameObject: {fileID: 511688011}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 9490abf02aa2afc4fa574f2348c02219, type: 2}
+  m_Controller: {fileID: 9100000, guid: fb90ccb2ec212034fbd8bc2398a06ec2, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -192192,7 +192192,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.EventSystems.EventTrigger
   m_Delegates:
-  - eventID: 0
+  - eventID: 9
     callback:
       m_PersistentCalls:
         m_Calls:
@@ -237513,7 +237513,7 @@ Animator:
   m_GameObject: {fileID: 583567347}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 9490abf02aa2afc4fa574f2348c02219, type: 2}
+  m_Controller: {fileID: 9100000, guid: fb90ccb2ec212034fbd8bc2398a06ec2, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -237538,7 +237538,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.EventSystems.EventTrigger
   m_Delegates:
-  - eventID: 0
+  - eventID: 9
     callback:
       m_PersistentCalls:
         m_Calls:
@@ -306537,7 +306537,7 @@ Animator:
   m_GameObject: {fileID: 802002073}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 9490abf02aa2afc4fa574f2348c02219, type: 2}
+  m_Controller: {fileID: 9100000, guid: fb90ccb2ec212034fbd8bc2398a06ec2, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -306562,7 +306562,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.EventSystems.EventTrigger
   m_Delegates:
-  - eventID: 0
+  - eventID: 9
     callback:
       m_PersistentCalls:
         m_Calls:
@@ -790710,7 +790710,7 @@ Animator:
   m_GameObject: {fileID: 1446338638}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 9490abf02aa2afc4fa574f2348c02219, type: 2}
+  m_Controller: {fileID: 9100000, guid: fb90ccb2ec212034fbd8bc2398a06ec2, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -790735,7 +790735,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.EventSystems.EventTrigger
   m_Delegates:
-  - eventID: 0
+  - eventID: 9
     callback:
       m_PersistentCalls:
         m_Calls:
@@ -852959,7 +852959,7 @@ Animator:
   m_GameObject: {fileID: 1610775007}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 9490abf02aa2afc4fa574f2348c02219, type: 2}
+  m_Controller: {fileID: 9100000, guid: fb90ccb2ec212034fbd8bc2398a06ec2, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -852984,7 +852984,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.EventSystems.EventTrigger
   m_Delegates:
-  - eventID: 1
+  - eventID: 9
     callback:
       m_PersistentCalls:
         m_Calls:
@@ -918135,7 +918135,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.EventSystems.EventTrigger
   m_Delegates:
-  - eventID: 0
+  - eventID: 9
     callback:
       m_PersistentCalls:
         m_Calls:
@@ -918161,7 +918161,7 @@ Animator:
   m_GameObject: {fileID: 1781625453}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 56ec2b5ae08cc6b4d962c9a0ef0535c8, type: 2}
+  m_Controller: {fileID: 9100000, guid: fb90ccb2ec212034fbd8bc2398a06ec2, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -1080170,7 +1080170,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Keypad
   Answer: {fileID: 2105322492}
-  DoorTrigger: {fileID: 0}
+  DoorTrigger: {fileID: 936673030}
   keypadPanel: {fileID: 461663706}
   timer: {fileID: 268284562}
   FPController: {fileID: 702746211}
@@ -1118974,7 +1118974,7 @@ Animator:
   m_GameObject: {fileID: 2090473354}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 9490abf02aa2afc4fa574f2348c02219, type: 2}
+  m_Controller: {fileID: 9100000, guid: fb90ccb2ec212034fbd8bc2398a06ec2, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -1118999,7 +1118999,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.EventSystems.EventTrigger
   m_Delegates:
-  - eventID: 0
+  - eventID: 9
     callback:
       m_PersistentCalls:
         m_Calls:

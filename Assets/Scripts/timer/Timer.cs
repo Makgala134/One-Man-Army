@@ -73,7 +73,7 @@ public class Timer : MonoBehaviour
         countdownSoundPlayed = false;
 
         // Make sure the timer is 6 minutes even if an old value was saved in the Inspector
-        timeRemaining = 90f;
+        timeRemaining = 360f;
 
         if (countdownText != null)
             countdownText.gameObject.SetActive(false);
