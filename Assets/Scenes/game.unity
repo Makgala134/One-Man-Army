@@ -118511,7 +118511,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7ba695d1cecbd64d970551f93d693a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Timer
-  timeRemaining: 60
+  timeRemaining: 360
   timerIsActive: 1
   countdownStartTime: 15
   countdownSound: {fileID: 8300000, guid: a54b62bade1b3bc449d82e07643b5656, type: 3}
