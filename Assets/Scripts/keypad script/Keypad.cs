@@ -71,9 +71,10 @@ public class Keypad : MonoBehaviour
         if (Answer.text == AnswerText)
         {
             Debug.Log("Correct code entered!");
-            DoorTrigger.SetBool("IsOpen", true);
+            //DoorTrigger.SetBool("IsOpen", true);
+            DoorTrigger.SetTrigger("Open");
             if (timer != null) timer.StopTimer(); 
-            StartCoroutine("StopDoorAnimation");
+            //StartCoroutine("StopDoorAnimation");
             CloseKeypad();
           
             // Add your logic for the correct code here (e.g., open a door, trigger an event, etc.)
