@@ -31,7 +31,7 @@ public class Timer : MonoBehaviour
     public AudioSource audioSource; // Optional: one is added automatically if left empty
 
 
-
+    private int lastSecond = -1; // To track the last second displayed for countdown
 
     private bool countdownSoundPlayed = false;
 
@@ -55,7 +55,7 @@ public class Timer : MonoBehaviour
     //private Coroutine flashCoroutine;
 
     [SerializeField] ScreenFlash screenFlash; // Reference to the ScreenFlash script
-
+    [SerializeField] Color newColor = Color.red; // Color for the flash effect
     void Start()
     {
         if (audioSource == null)
@@ -140,8 +140,6 @@ public class Timer : MonoBehaviour
         {
             int secondsLeft = Mathf.CeilToInt(timeLeft);
 
-            //ScreenFlash.StartFlash(.25f, 0.5f, Color.red); // Flash the screen red for 0.25 seconds with 50% opacity
-
             // Turn the main timer red for the final stretch
             timerText.color = Color.red;
  
@@ -151,7 +149,18 @@ public class Timer : MonoBehaviour
                 audioSource.PlayOneShot(countdownSound);
                 countdownSoundPlayed = true;
             }
- 
+
+            //only runs once per second
+            if (secondsLeft != lastSecond)
+            {
+                lastSecond = secondsLeft;
+                // Trigger the screen flash effect
+                if (screenFlash != null)
+                {
+                    screenFlash.StartFlash(0.25f,0.51f, newColor); // Adjust duration and max alpha as needed
+                }
+            }
+
             if (countdownText != null)
             {
                 countdownText.gameObject.SetActive(true);

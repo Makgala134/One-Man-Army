@@ -23,12 +23,17 @@ public class ScreenFlash : MonoBehaviour
         //ensure maxAlpha isnt above 1
 
         maxAlpha = Mathf.Clamp(maxAlpha, 0, 1);
+        newColor.a = 0; // Set the alpha to 0 initially
+        _image.color = newColor;
+        _image.enabled = true; 
+
 
         if (currentFlashRoutine != null)
         {
             StopCoroutine(currentFlashRoutine);
-            currentFlashRoutine = StartCoroutine(Flash(secondsForOneFlash, maxAlpha));
         }
+
+        currentFlashRoutine = StartCoroutine(Flash(secondsForOneFlash, maxAlpha));
     }
     
     IEnumerator Flash(float secondsForOneFlash, float maxAlpha)
@@ -49,5 +54,21 @@ public class ScreenFlash : MonoBehaviour
         }
 
         //animate the flash out
+        float flashOutDuration = secondsForOneFlash / 2;
+        for (float t = 0; t < flashOutDuration; t += Time.deltaTime)
+        {
+            //create a new color change
+            Color colorThisFrame = _image.color;
+            colorThisFrame.a = Mathf.Lerp(maxAlpha, 0, t / flashOutDuration);
+
+            //apply it
+            _image.color = colorThisFrame;
+
+            //wait until the next frame
+            yield return null;
+        }
+
+        //disable the image when the flash is done
+        _image.enabled = false;
     }
 }
