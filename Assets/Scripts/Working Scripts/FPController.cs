@@ -15,6 +15,9 @@ public class FPController : MonoBehaviour
     public float jumpHeight = 3f;
 
     private Animator animator;
+    [SerializeField] private Animator playAnimator;
+    private bool isMoving = false;
+
     [Header("Look Settings")]
     public Transform cameraTransform;
     public Camera cam;
@@ -118,11 +121,13 @@ public class FPController : MonoBehaviour
         if (controller.isGrounded && velocity.y < 0)
         {
             animator.SetBool("isMoving", true);
+            animator.SetBool("isIdle", false);
             velocity.y = -2f;
         }
         else
         {
             animator.SetBool("isMoving", false);
+            animator.SetBool("isIdle", true);
         }
 
             velocity.y += gravity * Time.deltaTime;
