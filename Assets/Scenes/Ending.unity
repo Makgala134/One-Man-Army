@@ -21445,117 +21445,6 @@ Mesh:
       - serializedVersion: 1
         m_IndexStart: 0
         m_IndexCount: 0
---- !u!1001 &1632293927
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: -8679921383154817045, guid: aa79af28f8c42cc48854963cf9caf9de, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 2.636354
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: aa79af28f8c42cc48854963cf9caf9de, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 2.636354
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: aa79af28f8c42cc48854963cf9caf9de, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 2.636354
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: aa79af28f8c42cc48854963cf9caf9de, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -23.5
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: aa79af28f8c42cc48854963cf9caf9de, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: aa79af28f8c42cc48854963cf9caf9de, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 74.4
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: aa79af28f8c42cc48854963cf9caf9de, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: -0.29120305
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: aa79af28f8c42cc48854963cf9caf9de, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: aa79af28f8c42cc48854963cf9caf9de, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0.95666134
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: aa79af28f8c42cc48854963cf9caf9de, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: aa79af28f8c42cc48854963cf9caf9de, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: aa79af28f8c42cc48854963cf9caf9de, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 213.86
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: aa79af28f8c42cc48854963cf9caf9de, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 919132149155446097, guid: aa79af28f8c42cc48854963cf9caf9de, type: 3}
-      propertyPath: m_Name
-      value: Blessing_Soko_Group14_final exam_NPC
-      objectReference: {fileID: 0}
-    - target: {fileID: 5489577804494372212, guid: aa79af28f8c42cc48854963cf9caf9de, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5489577804494372212, guid: aa79af28f8c42cc48854963cf9caf9de, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 13.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 5489577804494372212, guid: aa79af28f8c42cc48854963cf9caf9de, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 8
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: aa79af28f8c42cc48854963cf9caf9de, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1632293929}
-  m_SourcePrefab: {fileID: 100100000, guid: aa79af28f8c42cc48854963cf9caf9de, type: 3}
---- !u!1 &1632293928 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: aa79af28f8c42cc48854963cf9caf9de, type: 3}
-  m_PrefabInstance: {fileID: 1632293927}
-  m_PrefabAsset: {fileID: 0}
---- !u!95 &1632293929
-Animator:
-  serializedVersion: 7
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1632293928}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 4c11aa0281145c34dbe46f9fde45719d, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_AnimatePhysics: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1647366069
 GameObject:
   m_ObjectHideFlags: 0
@@ -24049,6 +23938,105 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1001 &1866031700
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: b21c5e2bcc2a7ff4fb1df39f0dee7b1f, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 2.636354
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: b21c5e2bcc2a7ff4fb1df39f0dee7b1f, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2.636354
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: b21c5e2bcc2a7ff4fb1df39f0dee7b1f, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 2.636354
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: b21c5e2bcc2a7ff4fb1df39f0dee7b1f, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -23.5
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: b21c5e2bcc2a7ff4fb1df39f0dee7b1f, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: b21c5e2bcc2a7ff4fb1df39f0dee7b1f, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 74.4
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: b21c5e2bcc2a7ff4fb1df39f0dee7b1f, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: -0.29120305
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: b21c5e2bcc2a7ff4fb1df39f0dee7b1f, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: b21c5e2bcc2a7ff4fb1df39f0dee7b1f, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.95666134
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: b21c5e2bcc2a7ff4fb1df39f0dee7b1f, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: b21c5e2bcc2a7ff4fb1df39f0dee7b1f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: b21c5e2bcc2a7ff4fb1df39f0dee7b1f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 213.86
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: b21c5e2bcc2a7ff4fb1df39f0dee7b1f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: b21c5e2bcc2a7ff4fb1df39f0dee7b1f, type: 3}
+      propertyPath: m_Name
+      value: Blessing_Soko_Group14_A3_NPC (1)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: b21c5e2bcc2a7ff4fb1df39f0dee7b1f, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1866031702}
+  m_SourcePrefab: {fileID: 100100000, guid: b21c5e2bcc2a7ff4fb1df39f0dee7b1f, type: 3}
+--- !u!1 &1866031701 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: b21c5e2bcc2a7ff4fb1df39f0dee7b1f, type: 3}
+  m_PrefabInstance: {fileID: 1866031700}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &1866031702
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1866031701}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 1b0be5685c750f146b4d86cd484c9fe2, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!43 &1874368777
 Mesh:
   m_ObjectHideFlags: 0
@@ -28411,7 +28399,7 @@ SceneRoots:
   - {fileID: 1095921564}
   - {fileID: 970842973}
   - {fileID: 946135170}
-  - {fileID: 1632293927}
+  - {fileID: 1866031700}
   - {fileID: 158325565}
   - {fileID: 602136861}
   - {fileID: 96838395}
