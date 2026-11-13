@@ -15,7 +15,7 @@ public class Keypad : MonoBehaviour
     [SerializeField] private MonoBehaviour FPController; // Reference to the player's look script
     [SerializeField] private MonoBehaviour playerLook; // Reference to the player's look script
     [SerializeField] private float doorOpenTime = 1f; // Time in seconds for the door to stay open before closing
-    private string AnswerText = "1234";
+    private string AnswerText = "170904";
     private bool keypadOpen = false;
     private bool showingInvalid = false;
 
